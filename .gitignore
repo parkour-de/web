@@ -1,2 +1,8 @@
+# database
 *sqlite*
+
+# cache
 *pycache*
+
+# ide
+.idea/
