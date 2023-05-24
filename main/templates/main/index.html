@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% block head %}
+<title>Parkour Deutschland</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="hero">
+    <div class="hero-body">
+      <h1>Parkourverband Deutschland</h1>
+      <p>Unsere Leitlinien</p>
+    </div>
+</div>
+
+{% include 'main/leitlinien.html' %}
+
+
+{% endblock %}

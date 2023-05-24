@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/spectre-exp.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spectre.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spectre-icons.min.css' %}">
+    <script  src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+         crossorigin="anonymous"></script>
+    {% block head %}{% endblock %}
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+    <header class="navbar bg-secondary">
+        <section class="navbar-section">
+          <a href="{% url 'main_index' %}" class="navbar-brand mx-2">Home</a>
+        </section>
+        <section class="navbar-center">
+            <div class="mt-2">
+            <img src="{% static 'img/example.png' %}" width="35px">
+            </div>
+            <div class="px-2 text-small">
+                Parkour <br>
+                Deutschland
+            </div>
+        </section>
+        <section class="navbar-section">
+            <a href="#" class="btn btn-link">Mitmachen</a>
+          </section>
+    </header>
+    <section class='container grid-lg'>
+    {% block body %}{% endblock %}
+    </section>
+    <footer class="section section-footer mt-2" style="margin-top:auto;">
+        <div class="container grid-lg">
+          <h6>Initiative Parkour Deutschland</h6>
+          <p>Wir sind eine Initiative zur Gründung eines Parkour Dachverbandes in Deutschland. <br>
+            Dieser soll die Interessen der Parkourszene vertreten und eine Plattform für alle Traceure sein.</p>
+          <p><a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
+        </div>
+    </footer>
+</body>
+</html>
