@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+<title>Mitmachen!</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="hero">
+    <div class="hero-body">
+      <h1>Unser Newsletter</h1>
+
+        <p>Du interessierst dich für unsere Initiative? Dann komm in unseren Verteiler!<br>
+        Was bedeutet das? Du bekommst:
+        <ul>
+            <li>Einladungen zu den Verbandstreffen</li>
+            <li>Die Protokolle der Sitzungen und Updates</li>
+            <li>Neuigkeiten zum Stand der Initiative</li>
+            <li>Infomationen zu Veranstaltungen aus der Parkourszene (soweit sie an uns herangetragen werden)</li>
+        </ul>
+        <strong>Wenn du mitmachen möchtest, dann schreibe uns gerne eine Notiz in das Feld oder komme zum nächsten Verbandstreffen dazu!</strong>
+        </p>
+
+    </div>
+    <div>
+        <!-- #TODO: make pretty -->
+        <form class="form" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Absenden</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
