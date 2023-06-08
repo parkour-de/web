@@ -28,6 +28,17 @@
         </section>
     </header>
     <section class='container grid-lg'>
+    <!-- Display messages if there are any -->
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="toast toast-{{message.tags}}">
+            <button class="btn btn-clear float-right"></button>
+            {{ message }}
+        </div><br>
+        {% endfor %}
+    </ul>
+    {% endif %}
     {% block body %}{% endblock %}
     </section>
     <footer class="section section-footer mt-2" style="margin-top:auto;">
@@ -39,4 +50,11 @@
         </div>
     </footer>
 </body>
+
+<script>
+$('body').on('click','.btn-clear', function(){
+    $(this).parent().remove()
+});
+</script>
+
 </html>
