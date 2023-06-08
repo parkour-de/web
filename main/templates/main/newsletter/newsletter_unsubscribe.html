@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block body %}
+
+<div class="hero">
+    <div class="hero-body">
+
+    <h1>Aus Newsletter austragen</h1>
+
+    <p>Trage hier deine Emailadresse ein und wir werden sie aus
+        dem Verteiler entfernen
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Jawoll</button>
+    </form>
+
+    </div>
+</div>
+
+{% endblock %}
